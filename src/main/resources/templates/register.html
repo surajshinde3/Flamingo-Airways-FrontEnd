@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/master-page}">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Register</title>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<div class="row justify-content-md-center">
+			<div class="col-md-4 jumbotron">
+				<h2 style="text-align: center" class="text-dark">Registration
+					Form</h2>
+
+				<form th:action="@{/register}" method="post"
+					class="form">
+
+					<!-- <p class="error-message" th:if="${#fields.hasGlobalErrors()}"
+						th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
+						error</p> -->
+
+					<div class="form-group">
+
+						<label for="email"><b>First Name</b></label> <input type="text"
+							placeholder="Please Enter First Name" name="firstname"
+							id="firstname" class="form-control" required>
+
+
+					</div>
+					<div class="form-group">
+
+						<label for="email"><b>Last Name</b></label> <input type="text"
+							placeholder="Please Enter Last Name" name="lastname"
+							id="lastname" class="form-control" required>
+
+					</div>
+					<div class="form-group">
+						<label for="email"><b>Username</b></label> <input type="text"
+							placeholder="Please Enter Username" name="username" id="username"
+							class="form-control" required>
+						<!-- <div th:if="${existingusername != null}"
+							class="alert alert-danger notification" role="alert">
+							<p th:text="${existingusername}"></p>
+							<p>Username already exists</p>
+						</div> -->
+
+					</div>
+					<div class="form-group">
+						
+						<label for="email"><b>Email</b></label> <input type="text"
+							placeholder="Please Enter Email" name="email" id="email"
+							class="form-control" required>
+						<!-- <div th:if="${existingemail != null}"
+							class="alert alert-danger notification" role="alert">
+							<p th:text="${existingemail}"></p>
+							<p>Email Id already exists</p>
+						</div> -->
+
+
+					</div>
+
+					<!-- <div class="form-group"
+						th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
+						<label for="email" class="control-label">E-mail</label> <input
+							id="email" class="form-control" th:field="*{email}" />
+						<p class="error-message"
+							th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation
+							error</p>
+					</div> -->
+
+					<div class="form-group">
+						<label for="psw"><b>Password</b></label> <input type="password"
+							placeholder="Please Enter Password" name="password" id="password"
+							class="form-control" required>
+							<!-- <div th:if="${existingemail != null}"
+							class="alert alert-danger notification" role="alert">
+							<p th:text="${existingemail}"></p>
+							<p>Email Id already exists</p>
+						</div> -->
+							
+					</div>
+
+
+					<div class="form-group" style="float: right;">
+						<a href="/" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+						<button type="submit" class="btn btn-outline-success">Register</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</th:block>
+</body>
+</html>
